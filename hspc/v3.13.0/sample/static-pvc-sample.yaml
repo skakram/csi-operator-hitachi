@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dev-postgres-static-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: sc-gold-dc1
+  volumeMode: Filesystem
+  volumeName: postgres-dev-pv
+  reclaimPolicy: Retain
